@@ -39,7 +39,7 @@ data/       Evaluation benchmarks
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/evaluating-hybrid-rag-arabic-regulatory-qa.git
+git clone https://github.com/belike007/evaluating-hybrid-rag-arabic-regulatory-qa.git
 cd evaluating-hybrid-rag-arabic-regulatory-qa
 pip install -r requirements.txt
 ```
@@ -84,4 +84,4 @@ LORDS Institute of Engineering and Technology
 
 India
 
-Email: Belikejunaid007@gmail.com
+Email: belikejunaid007@gmail.com
