@@ -8,9 +8,7 @@ pdf_files = [
     if f.lower().endswith(".pdf")
 ]
 if len(pdf_files) == 0:
-    raise FileNotFoundError(
-        f"No PDF found in: {PDF_DIR}"
-    )
+    raise FileNotFoundError(f"No PDF found in: {PDF_DIR}")
 if len(pdf_files) > 1:
     raise RuntimeError(
         f"Multiple PDFs found in {PDF_DIR}.\n"
@@ -18,10 +16,7 @@ if len(pdf_files) > 1:
         f"Found: {pdf_files}"
     )
 PDF_PATH = os.path.join(PDF_DIR, pdf_files[0])
-EMBEDDING_MODEL = (
-    "sentence-transformers/"
-    "paraphrase-multilingual-MiniLM-L12-v2"
-)
+EMBEDDING_MODEL = ("sentence-transformers/","paraphrase-multilingual-MiniLM-L12-v2")
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 VECTOR_TOP_K = 15
