@@ -21,15 +21,10 @@ def load_questions():
 
 def main():
 
-    questions = load_questions()
-
-    print("======================================")
+    questions = load_questions() 
     print("RAG EVALUATION")
-    print("======================================")
     print(f"Questions: {len(questions)}")
-
     pipeline = RAGPipeline()
-
     results = []
 
     for i, question in enumerate(questions, start=1):
@@ -37,20 +32,12 @@ def main():
         print(f"\n[{i}/{len(questions)}]")
         print(question)
 
-        answer, retrieved_results = pipeline.ask(
-            question,
-            verbose=False
-        )
-
+        answer, retrieved_results = pipeline.ask( question, verbose=False)
         context = pipeline.build_context(retrieved_results)
-
         retrieved_sources = []
 
         for result in retrieved_results:
-            retrieved_sources.append({
-            
-                "text": result.get("text")
-            })
+            retrieved_sources.append({ "text": result.get("text")})
 
         results.append({
             "question": question,
@@ -62,24 +49,12 @@ def main():
         print("\nAnswer:")
         print(answer)
 
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    with open( OUTPUT_FILE,"w",encoding="utf-8") as f:
 
-        json.dump(
-            results,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+        json.dump(results,f,ensure_ascii=False,indent=2)
 
-    print("\n======================================")
-    print("RAG EVALUATION COMPLETE")
-    print("======================================")
+    print("RAG EVALUATION COMPLETE") 
     print(f"Saved to: {OUTPUT_FILE}")
-
 
 if __name__ == "__main__":
     main()
